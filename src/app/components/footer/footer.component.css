@@ -1,5 +1,16 @@
-hr {
-  margin: 0;
+footer {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "TextoCopyright LogoRodape .";
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #00ffcc;
 }
 
 .rodapé {
@@ -7,49 +18,38 @@ hr {
   padding: 1em;
 }
 
-.lista-rodapé {
-  display: none;
+.TextoCopyright {
+  justify-self: center;
+  grid-area: TextoCopyright;
 }
 
-@media screen and (min-width: 1024px) {
-  .rodapé {
-      display: flex;
-      justify-content: space-around;
+.LogoRodape {
+  justify-self: center;
+  grid-area: LogoRodape;
+}
+
+.Texto {
+  justify-self: center;
+}
+
+footer small {
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .cabecalho .logo {
+    padding: 2rem;
   }
 
-  .lista-rodapé {
-      display: block;
-  }
-
-  .lista-rodapé__item {
-      display: flex;
-      align-items: center;
-      margin: 0.6em 0;
-  }
-
-  .lista-rodapé__link {
-      color: var(--cinza);
-      text-decoration: none;
-      margin-left: 0.6em;
-  }
-
-  .lista-rodapé__titulo {
-      font-size: 14px;
-      color: var(--cinza-claro);
-  }
-
-  .rodapé__titulo {
-      font-size: 24px;
+  .cabecalho p {
+    font-size: 1.5rem
   }
 }
 
-@media screen and (min-width: 1728px) {
-  .lista-rodapé {
-      border-left: 1px solid var(--cinza-claro);
-      padding-left: 1em;
-  }
-
-  .rodapé {
-      padding: 3em 0;
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
   }
 }
